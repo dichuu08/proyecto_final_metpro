@@ -82,3 +82,57 @@ customerData inputCustomer(){
 
     return customer;
 }
+
+void addCar(carData car){
+
+    ofstream file("project.txt", ios::app);
+
+    if(file.is_open()){
+        
+        file<<"\n---CAR INFO---\n\n";
+        file<<"Kind: "<<car.kind<<endl;
+        file<<"Brand: "<<car.brand<<endl;
+        file<<"Model: "<<car.model<<endl;
+        file<<"Color: "<<car.color<<endl;
+        file<<"Transmission: "<<car.transmission<<endl,
+        file<<"Year: "<<car.year<<endl;
+        file<<"Price: "<<car.price<<endl;
+        file.close();
+
+    } else{
+        file<<"File coulndt be opened"<<endl;
+    }
+}
+
+carData inputCar(){
+    carData car;
+ 
+    cout<<"\n---CAR INFO---\n\n";
+
+   fflush(stdin);
+
+    cout<<"Insert kind: ";
+    getline(cin, car.kind);
+
+    cout<<"Insert brand: ";
+    getline(cin, car.brand);
+
+    cout<<"Insert model: ";
+    getline(cin, car.model);
+
+    cout<<"Insert color: ";
+    cin>>car.color;
+
+    cout<<"Insert transmission: ";
+    cin>>car.transmission; 
+
+    fflush(stdin);
+
+    cout<<"Insert year: ";
+    cin>>car.year;
+
+    cout<<"Insert price: ";
+    cin>>car.price;
+ 
+    return car;
+}
