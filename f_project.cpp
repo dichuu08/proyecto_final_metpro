@@ -192,3 +192,20 @@ void searchCustomer() {
         cout << "No records available" << endl;
     }
 }
+
+void showCustomers(){
+    system("cls");
+    ifstream file("project.txt");
+    string line;
+    if(file.is_open()){
+        while(getline(file, line)){
+            cout<<line<<endl;
+        }
+        file.close();
+
+    } else{
+        cout<<"No records available"<<endl;
+    }
+    system("pause");
+    system("cls");
+}
