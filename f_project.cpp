@@ -136,3 +136,16 @@ carData inputCar(){
  
     return car;
 }
+
+void newCustomer(){
+    customerData customer = inputCustomer();
+    addCustomer(customer);
+
+    carData car = inputCar();
+    addCar(car);
+}
+
+void existingCustomer(){
+    carData car;
+    addCar(car);
+}
