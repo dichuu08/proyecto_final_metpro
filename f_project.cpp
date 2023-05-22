@@ -149,3 +149,46 @@ void existingCustomer(){
     carData car;
     addCar(car);
 }
+
+void searchCustomer() {
+    system("cls");
+    string customerID;
+    cout << "Enter ID to search: ";
+    cin.ignore();
+    getline(cin, customerID);
+
+    ifstream file("project.txt");
+    if (file.is_open()){
+        string line;
+        bool customerFound = false;
+        string ID;
+        while (getline(file, line)){
+             if (line.find("ID: " + customerID) != string::npos){
+
+                customerFound = true;
+                ID = line.substr(line.find(":") +2);
+
+                system("cls");
+                cout << "---CUSTOMER INFO---\n\n";
+                cout<<"ID: "<<ID<<endl;
+                while (getline(file, line) && line.find("---CAR INFO---") == string::npos) {
+                    cout << line << endl;
+                }
+                cout << "---CAR INFO---\n";
+                while (getline(file, line) && line.find("---CUSTOMER INFO---") == string::npos) {
+                    cout << line << endl;
+                }
+                system("pause");
+                system("cls");
+            }
+        }
+
+        file.close();
+
+        if (!customerFound) {
+            cout << "\nCustomer not found\n";
+        }
+    } else {
+        cout << "No records available" << endl;
+    }
+}
