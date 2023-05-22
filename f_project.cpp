@@ -209,3 +209,51 @@ void showCustomers(){
     system("pause");
     system("cls");
 }
+
+
+
+
+
+
+
+
+
+int mainMenu(){
+    int choice;
+    cout<<"\n\n***CUSTOMER REGISTER SYSTEM***\n\n";
+    cout<<"1. Add customer"<<endl;
+    cout<<"2. Search customer"<<endl;
+    cout<<"3. Show customers"<<endl;
+    cout<<"4. Edit customers data"<<endl;
+    cout<<"5. Delete customer"<<endl;
+    cout<<"6. Generate bill"<<endl;
+    cout<<"7. Exit\n\n";
+    cout<<"Choose an option: ";
+    cin>>choice;
+
+    switch (choice)
+    {
+    case 1:
+        newCustomer();
+        break;
+    case 2:
+        searchCustomer();
+        break;
+    case 3:
+        showCustomers();
+        break;
+    case 4:
+    //updateCustomer();
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    case 7:
+        break;
+    default:
+        cout<<"ERROR: INVALID  OPTION"<<endl;
+        system("pause");
+    }
+return 0;
+}
